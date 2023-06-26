@@ -30,4 +30,8 @@ describe("Home page - Rendering", () => {
     render(<Home />);
     expect(screen.getByDisplayValue(/kaushal/)).toBeInTheDocument();
   });
+  it("should not get the text: This is the text", () => {
+    render(<Home />);
+    expect(screen.queryByText("This is the text")).not.toBeInTheDocument();
+  });
 });
