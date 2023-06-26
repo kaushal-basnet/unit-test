@@ -22,11 +22,11 @@ describe("Home page - Rendering", () => {
     render(<Home />);
     expect(screen.getByLabelText(/specific text/)).toBeInTheDocument(); //either id or htmFor word should be match like specific
   });
-  it("should find by placeholder", () => {
+  it("should get by placeholder", () => {
     render(<Home />);
     expect(screen.getByPlaceholderText(/search/)).toBeInTheDocument();
   });
-  it("should find by value", () => {
+  it("should get by value", () => {
     render(<Home />);
     expect(screen.getByDisplayValue(/kaushal/)).toBeInTheDocument();
   });
