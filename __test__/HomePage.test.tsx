@@ -41,7 +41,14 @@ describe("Home page", () => {
       });
       await userEvent.click(showTextButton);
       //get the text after button click using asyncronous userEvent
-      expect(screen.getByText("This is the text")).toBeInTheDocument;
+      // expect(screen.getByText("This is the text")).toBeInTheDocument;
+
+      //findBy...: Returns a Promise which resolves when an element is found which matches the given query.
+      //upto 1000ms
+      // expect(await screen.findByText("This is the text")).toBeInTheDocument;
+      // more than 1000ms, findBy use 3 argument
+      expect(await screen.findByText("This is the text",{}, {timeout:1100})).toBeInTheDocument;
+
     });
   });
 });
