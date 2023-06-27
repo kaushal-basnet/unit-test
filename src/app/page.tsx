@@ -22,7 +22,14 @@ export default function Home() {
       </div>
       <div>
         <button
-          onClick={() => setShowText(!showText)}
+          onClick={() => {
+            setShowText(!showText);
+          }}
+          // onClick={() => {
+          //   setTimeout(() => {
+          //     setShowText(!showText);
+          //   }, 100);
+          // }}
           className="border rounded-md border-black p-2 m-2 bg-slate-400 text-white"
         >
           show me the text
