@@ -1,11 +1,11 @@
 interface IDataType {
-  displayname: string;
+  displayName: string;
   userName: string;
   email: string;
   isEmailVerified: boolean;
 }
 export const UserProfile = ({
-  displayname,
+  displayName,
   userName,
   email,
   isEmailVerified,
@@ -13,7 +13,12 @@ export const UserProfile = ({
   return (
     <div>
       <div>
-        <span>Display Name: {displayname}</span>
+        <span>
+          Display Name:{" "}
+          {displayName.length > 16
+            ? displayName.slice(0, 10).concat("...")
+            : displayName}
+        </span>
       </div>
       <div>
         <span>Username: {userName}</span>
